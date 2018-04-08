@@ -202,5 +202,17 @@ namespace DailyDiary.Properties {
                 this["s_textboxLightCursorNightOnly"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_SingleUserMode {
+            get {
+                return ((bool)(this["s_SingleUserMode"]));
+            }
+            set {
+                this["s_SingleUserMode"] = value;
+            }
+        }
     }
 }
