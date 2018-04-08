@@ -1,0 +1,37 @@
+﻿<Window x:Name="f_Login" x:Class="DailyDiary.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DailyDiary"
+        mc:Ignorable="d"
+        Title="Login Window" Height="150.456" Width="313.135" UseLayoutRounding="True" HorizontalContentAlignment="Center"	MouseDown="Grid_MouseDown"	WindowStartupLocation="CenterScreen">
+	
+	<Grid x:Name="mainGrid" MouseDown="Grid_MouseDown">
+		<Label			x:Name="lbl_Username"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="Auto"	Margin="10,10,0,0"		Content="Name: "			MouseDown="Grid_MouseDown" />
+		<Label			x:Name="lbl_Password"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="Auto"	Margin="10,36,0,0"		Content="Password: "		MouseDown="Grid_MouseDown"  />
+
+		<TextBox		x:Name="tb_Username"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,14,0,0"		TextWrapping="Wrap"			MouseDown="Grid_MouseDown"					GotFocus="tb_Pass_GotFocus" KeyDown="tb_Username_KeyDown"/>
+		<TextBox		x:Name="tb_Pass_Clear"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,39,0,0"		TextWrapping="Wrap"			TextChanged="tb_Pass_Clear_TextChanged"		Visibility="Hidden" />
+		<PasswordBox	x:Name="tb_Pass"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,39,0,0"		PasswordChar="*"			MouseDown="Grid_MouseDown"					GotFocus="tb_Pass_GotFocus" KeyDown="tb_Pass_KeyDown"/>
+
+		<CheckBox		x:Name="cb_ShowPass"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="Auto"	Margin="213,42,0,0"		Content="Show Pass"			Checked="cb_ShowPass_Checked"	Unchecked="cb_ShowPass_Unchecked"	MouseDown="Grid_MouseDown"/>
+
+		<Button			x:Name="btn_Quit"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="75"		Margin="10,77,0,0"		Content="Quit"				Click="btn_Quit_Click"/>
+		<Button			x:Name="btn_NewUser"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="118"		Margin="90,77,0,0"		Content="Create New User"	Click="btn_NewUser_Click"/>
+		<Button			x:Name="btn_Login"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="75"		Margin="213,77,0,0"		Content="Log In"			Click="btn_Login_Click"/>
+		<Button			x:Name="btn_More"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="75"		Margin="213,16,0,0"		Content="More ↓"			Click="btn_More_Click"/>
+
+		<StackPanel		x:Name="sp_Stack"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="66"		Width="77"		Margin="212,36,0,0" Background="White" Visibility="Hidden">
+
+			<Button		x:Name="btn_ForgotMyPass"	Padding="0,2,0,2" Margin="0,2,0,1" FontSize="7" Content="I Forgot my Password"	ToolTip="Sends you a password reminder to &#13;the email address you specified when &#13;creating your user."							Click="btn_ForgotMyPass_Click"	/>
+			<Button		x:Name="btn_ChangePass"		Padding="0,2,0,2" Margin="0,1,0,1" FontSize="7" Content="Change my Password"	ToolTip="Opens the change password dialog &#13;where you can update your password."														Click="btn_ChangePass_Click"	/>
+			<Button		x:Name="btn_DeleteUser"		Padding="0,2,0,2" Margin="0,1,0,1" FontSize="7" Content="Delete my User"		ToolTip="Opens the delete user dialog where &#13;you can delete your user and all the &#13;data stored in the database for that user"	Click="btn_DeleteUser_Click"	/>
+
+		</StackPanel>
+
+	</Grid>
+
+	<!-- https://stackoverflow.com/questions/3193339/tips-on-developing-resolution-independent-application/5000120#5000120 -->
+
+</Window>

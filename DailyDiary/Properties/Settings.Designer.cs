@@ -8,23 +8,199 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DailyDiary.Properties
-{
-
-
-	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-	internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-	{
-
-		private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-		public static Settings Default
-		{
-			get
-			{
-				return defaultInstance;
-			}
-		}
-	}
+namespace DailyDiary.Properties {
+    
+    
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
+        public global::System.Drawing.Color s_dayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_dayColor"]));
+            }
+            set {
+                this["s_dayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color s_sundayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_sundayColor"]));
+            }
+            set {
+                this["s_sundayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color s_mainBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_mainBackgroundColor"]));
+            }
+            set {
+                this["s_mainBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color s_textboxBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_textboxBackgroundColor"]));
+            }
+            set {
+                this["s_textboxBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color s_textColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_textColor"]));
+            }
+            set {
+                this["s_textColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkGray")]
+        public global::System.Drawing.Color s_night_MainBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_MainBackgroundColor"]));
+            }
+            set {
+                this["s_night_MainBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gray")]
+        public global::System.Drawing.Color s_night_TextboxBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_TextboxBackgroundColor"]));
+            }
+            set {
+                this["s_night_TextboxBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gainsboro")]
+        public global::System.Drawing.Color s_night_TextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_TextColor"]));
+            }
+            set {
+                this["s_night_TextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("64, 64, 64")]
+        public global::System.Drawing.Color s_night_DayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_DayColor"]));
+            }
+            set {
+                this["s_night_DayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 128, 0")]
+        public global::System.Drawing.Color s_night_SundayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_SundayColor"]));
+            }
+            set {
+                this["s_night_SundayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color s_dayTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_dayTextColor"]));
+            }
+            set {
+                this["s_dayTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gainsboro")]
+        public global::System.Drawing.Color s_night_DayTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_DayTextColor"]));
+            }
+            set {
+                this["s_night_DayTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_textboxLightCursor {
+            get {
+                return ((bool)(this["s_textboxLightCursor"]));
+            }
+            set {
+                this["s_textboxLightCursor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_PanelClosed {
+            get {
+                return ((bool)(this["s_PanelClosed"]));
+            }
+            set {
+                this["s_PanelClosed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_textboxLightCursorNightOnly {
+            get {
+                return ((bool)(this["s_textboxLightCursorNightOnly"]));
+            }
+            set {
+                this["s_textboxLightCursorNightOnly"] = value;
+            }
+        }
+    }
 }

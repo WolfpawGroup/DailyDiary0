@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,19 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="day_night_image" xml:space="preserve">
+    <value>iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAIAAADYhlU4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVEhLvY1ZEsMgFMNy/0u3jcSUkiFhe1RfLLZ8/InXTvJGOkWzd0Pnxo2PUGc251ME+E88+xi5gTzh1fewDcwZX/yK2UBb4KO/ARs4r/huYHUDYQW/zCxtYKvjr7H5DVS3GDA5uYHnCTOGZzaQNDBmfngDQxuTVsY2qHdh2NbABt1ezFvs3aA4gBW7XRu0xrBlvb1BZRiLGhob5Gewq+Rpg/Ak1vXcbpCcR4Oq+gaxJZRoq2yQWUWPwusGgQBU6Sw2+I1Bm9p84iuMX3M68R7J13yST9EUG/tIG3s5jjcVbtB2AxRTWwAAAABJRU5ErkJggg==</value>
+  </data>
+  <data name="floppy_image" xml:space="preserve">
+    <value>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR42s3Xb0tTURwH8O0t+NwXIIT1oL+UZYltcw4hNBtairI2793UIYbi0qkLI5HptnvdHIpWskwJbO5f4p+0SM0HGkEvwOe9BdsNvbu733Nr7MidX7js7Jwf53zu7+zJtJoCR3uuAP2L+wPpD7cK57qH6i4PkgDH8sou0yXq08aiBzCXBmhzAjirL1IDvCuHuQGeL34HQKeRHjAeQ8Bw3RUEuN4joMNYSg2YiP2AOc9DAqBvYQ8A7VX0AF8cAS/qryKg990uAUB/Bb44XsHIo2sI6InsAIA10HeAS2AHXpqvI+DZ/DcAMGcA4AmAVw03END99isArHr6Kwgl8QpGG28ioOvNFwA81dF3YCqFHRh7fAsBzrltAFj09IBwEgHepjIEdMxuIeAMOhAmdGCi+TYCHDOfAVB2oVhTUlyU9+G/jn5rtn8ewby/5Q4C2OmN4xz3pQ7XehcBbeF11QCTlnsIsIbWVAOErBUIsARXVQOEbZUIaOE/qQaYYe4joDmQUg0wa9ch4IkvQQQErJV5H2QPrUq/RtOPSRi8bjcgwOxdIQJ4my5vABNMEQERZzUCakeXiYBJRi+O2/ik4hopsnoRsNRdg4CakQ8fTwukCbJV4tjGxRXXSJHURyXTpuXeBwgQYvQsQRd41pBpKZdQXCNFVi92IOaqJQOE6AYXshABJvOWdj67A9I1UuT1p0kN1CsDhFT0R0SEX3KIQ7ah/z8AhwJgbcj8b4CQctf839+EnzVmNuRi2QDJGhEgqz+Je9PTgH/NCpGCA/4Ag6LLISPCZtcAAAAASUVORK5CYII=</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ibeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ibeam.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
