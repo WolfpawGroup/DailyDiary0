@@ -12,8 +12,8 @@
 		<Label			x:Name="lbl_Password"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="Auto"	Margin="10,36,0,0"		Content="Password: "		MouseDown="Grid_MouseDown"  />
 
 		<TextBox		x:Name="tb_Username"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,14,0,0"		TextWrapping="Wrap"			MouseDown="Grid_MouseDown"					GotFocus="tb_Pass_GotFocus" KeyDown="tb_Username_KeyDown"/>
-		<TextBox		x:Name="tb_Pass_Clear"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,39,0,0"		TextWrapping="Wrap"			TextChanged="tb_Pass_Clear_TextChanged"		Visibility="Hidden" />
 		<PasswordBox	x:Name="tb_Pass"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,39,0,0"		PasswordChar="*"			MouseDown="Grid_MouseDown"					GotFocus="tb_Pass_GotFocus" KeyDown="tb_Pass_KeyDown"/>
+		<TextBox		x:Name="tb_Pass_Clear"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="23"		Width="127"		Margin="81,39,0,0"		TextWrapping="Wrap"			TextChanged="tb_Pass_Clear_TextChanged"		Visibility="Hidden" />
 
 		<CheckBox		x:Name="cb_ShowPass"	HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="auto"	Width="Auto"	Margin="213,42,0,0"		Content="Show Pass"			Checked="cb_ShowPass_Checked"	Unchecked="cb_ShowPass_Unchecked"	MouseDown="Grid_MouseDown"/>
 
@@ -24,9 +24,9 @@
 
 		<StackPanel		x:Name="sp_Stack"		HorizontalAlignment="Left"	VerticalAlignment="Top"	Height="66"		Width="77"		Margin="212,36,0,0" Background="White" Visibility="Hidden">
 
-			<Button		x:Name="btn_ForgotMyPass"	Padding="0,2,0,2" Margin="0,2,0,1" FontSize="7" Content="I Forgot my Password"	ToolTip="Sends you a password reminder to &#13;the email address you specified when &#13;creating your user."							Click="btn_ForgotMyPass_Click"	/>
-			<Button		x:Name="btn_ChangePass"		Padding="0,2,0,2" Margin="0,1,0,1" FontSize="7" Content="Change my Password"	ToolTip="Opens the change password dialog &#13;where you can update your password."														Click="btn_ChangePass_Click"	/>
-			<Button		x:Name="btn_DeleteUser"		Padding="0,2,0,2" Margin="0,1,0,1" FontSize="7" Content="Delete my User"		ToolTip="Opens the delete user dialog where &#13;you can delete your user and all the &#13;data stored in the database for that user"	Click="btn_DeleteUser_Click"	/>
+			<Button		x:Name="btn_ForgotMyPass"	Padding="0,2,0,2" Margin="0,2,0,1" FontSize="7" Content="I Forgot my Password"	ToolTip="-- I forgot my Password --&#13;&#13;Sends you a password reminder to &#13;the email address you specified when &#13;creating your user."							Click="btn_ForgotMyPass_Click"	/>
+			<Button		x:Name="btn_ChangePass"		Padding="0,2,0,2" Margin="0,1,0,1" FontSize="7" Content="Change my Password"	ToolTip="-- Change my Password --&#13;&#13;Opens the change password dialog &#13;where you can update your password."														Click="btn_ChangePass_Click"	/>
+			<Button		x:Name="btn_DeleteUser"		Padding="0,2,0,2" Margin="0,1,0,1" FontSize="7" Content="Delete my User"		ToolTip="-- Delete my user --&#13;&#13;Opens the delete user dialog where &#13;you can delete your user and all the &#13;data stored in the database for that user"	Click="btn_DeleteUser_Click"	/>
 
 		</StackPanel>
 

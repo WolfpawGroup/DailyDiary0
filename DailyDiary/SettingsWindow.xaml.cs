@@ -127,8 +127,9 @@ namespace DailyDiary
 				cb_Cursor.IsEnabled = false;
 			}
 
-
-
+			cb_AskBeforeChange.IsChecked = Properties.Settings.Default.s_AskBeforeChange;
+			cb_SingleUser.IsChecked = Properties.Settings.Default.s_SingleUserMode;
+			
 			//tb_Data.Cursor = useLightCursor && myCursor != null ? myCursor : Cursors.IBeam;
 			//tb_Title.Cursor = useLightCursor && myCursor != null ? myCursor : Cursors.IBeam;
 

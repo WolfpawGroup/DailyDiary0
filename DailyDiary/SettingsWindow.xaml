@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DailyDiary"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="320.455" Width="444.034" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Loaded="w_Settings_Loaded">
+        Title="SettingsWindow" Height="405.121" Width="459.511" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Loaded="w_Settings_Loaded">
 	<Grid x:Name="g_MainGrid">
 		<CheckBox x:Name="cb_Cursor" Content="Use light cursor" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="cb_Cursor_Checked" Unloaded="cb_Cursor_Unloaded"/>
 		<RadioButton GroupName="rb_Cursor" IsEnabled="False" x:Name="rb_Cursor_Allways" Content="Always" HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top"/>
@@ -31,8 +31,10 @@
 		<Rectangle x:Name="rect_Color_Night_BG"			Cursor="Hand" Fill="#FFE2E2E2" HorizontalAlignment="Left" Height="20" Width="20" Margin="319,190,0,0" Stroke="LightBlue" VerticalAlignment="Top"	MouseDown="rect_Color_Day_Text_MouseDown"	/>
 		<Rectangle x:Name="rect_Color_Day_DayText"		Cursor="Hand" Fill="#FFE2E2E2" HorizontalAlignment="Left" Height="20" Width="20" Margin="208,216,0,0" Stroke="LightBlue" VerticalAlignment="Top"	MouseDown="rect_Color_Day_Text_MouseDown"	/>
 		<Rectangle x:Name="rect_Color_Night_DayText"	Cursor="Hand" Fill="#FFE2E2E2" HorizontalAlignment="Left" Height="20" Width="20" Margin="319,216,0,0" Stroke="LightBlue" VerticalAlignment="Top"	MouseDown="rect_Color_Day_Text_MouseDown"	/>
-		<Button x:Name="Cancel"	Content="Cancel"	HorizontalAlignment="Left" Margin="10,261,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
-		<Button x:Name="Save"	Content="Save"		HorizontalAlignment="Left" Margin="353,261,0,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
+		<Button x:Name="Cancel"	Content="Cancel"	HorizontalAlignment="Left" Margin="10,328,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+		<Button x:Name="Save"	Content="Save"		HorizontalAlignment="Left" Margin="353,328,0,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
+		<CheckBox x:Name="cb_SingleUser" Content="Single User mode" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" Checked="cb_Cursor_Checked" Unloaded="cb_Cursor_Unloaded" ToolTip="When turned on, you won't be asked your name or password to log in. &#13;Can only be turned on when there is only one user saved in the database."/>
+		<CheckBox x:Name="cb_AskBeforeChange" Content="Ask before change" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Checked="cb_Cursor_Checked" Unloaded="cb_Cursor_Unloaded" ToolTip="When turned on, if there is a change in the title or content of a page, &#13;the progarm will warn you and ask what you want to do with the changes."/>
 
 	</Grid>
 </Window>

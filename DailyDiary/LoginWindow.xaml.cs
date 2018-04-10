@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using System.Data.SQLite;
+using System.IO;
 
 namespace DailyDiary
 {
@@ -32,6 +33,10 @@ namespace DailyDiary
 
 		private void LoginWindow_Loaded(object sender, RoutedEventArgs e)
 		{
+			if (!File.Exists("circle.png")) { Properties.Resources.circle.Save("circle.png"); }
+			if (!File.Exists("square.png")) { Properties.Resources.square.Save("square.png"); }
+			if (!File.Exists("ibeam.cur")) { File.WriteAllBytes("ibeam.cur", Properties.Resources.ibeam); }
+
 			c_DBManager.createFile();
 			sqlc = c_DBManager.connect();
 			c_DBManager.createTables(sqlc);

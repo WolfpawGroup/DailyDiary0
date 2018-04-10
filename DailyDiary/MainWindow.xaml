@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DailyDiary"
-        xmlns:Forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" x:Class="DailyDiary.MainWindow"
+        xmlns:Forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" x:Name="w_Main" x:Class="DailyDiary.MainWindow"
 		WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title="MainWindow" Height="570.314" Width="918.771">

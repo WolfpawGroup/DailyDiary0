@@ -61,6 +61,16 @@ namespace DailyDiary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle {
+            get {
+                object obj = ResourceManager.GetObject("circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAIAAADYhlU4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVEhLvY1ZEsMgFMNy/0u3jcSUkiFhe1RfLLZ8/InXTvJGOkWzd0Pnxo2PUGc251ME+E88+xi5gTzh1fewDcwZX/yK2UBb4KO/ARs4r/huYHUDYQW/zCxtYKvjr7H5DVS3GDA5uYHnCTOGZzaQNDBmfngDQxuTVsY2qHdh2NbABt1ezFvs3aA4gBW7XRu0xrBlvb1BZRiLGhob5Gewq+Rpg/Ak1vXcbpCcR4Oq+gaxJZRoq2yQWUWPwusGgQBU6Sw2+I1Bm9p84iuMX3M68R7J13yST9EUG/tIG3s5jjcVbtB2AxRTWwAAAABJRU5ErkJggg==.
         /// </summary>
         internal static string day_night_image {
@@ -85,6 +95,16 @@ namespace DailyDiary.Properties {
             get {
                 object obj = ResourceManager.GetObject("ibeam", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap square {
+            get {
+                object obj = ResourceManager.GetObject("square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -286,16 +286,28 @@ namespace DailyDiary
 			if (sqlc.State != System.Data.ConnectionState.Open) { return false; }
 
 			SQLiteCommand sqlk = new SQLiteCommand("SELECT count(id) FROM users where username = '" + username + "'", sqlc);
+			
+			//SQLiteCommand sqlk = new SQLiteCommand("SELECT count(id) FROM users where username = '" + username + "'", sqlc);
 			//SQLiteCommand sqlk = new SQLiteCommand("SELECT count(id) FROM users WHERE username = '" + username + "' and password= '" + password + "'", sqlc);
 			var rr = sqlk.ExecuteScalar();
+
+			
+
 			if (rr is null || rr.ToString() == "0") { ret = false; }
 			else
 			{
-				sqlk = new SQLiteCommand("SELECT password FROM users where username = '" + username + "'", sqlc);
-				var rrr = sqlk.ExecuteScalar();
+				if (Properties.Settings.Default.s_SingleUserMode && password == "-1")
+				{
+					return true;
+				}
+				else
+				{
+					sqlk = new SQLiteCommand("SELECT password FROM users where username = '" + username + "'", sqlc);
+					var rrr = sqlk.ExecuteScalar();
 
-				if (decryptData(rrr.ToString(), username) == password) { ret = true; }
-				else { ret = false; }
+					if (decryptData(rrr.ToString(), username) == password) { ret = true; }
+					else { ret = false; }
+				}
 			}
 
 			return ret;

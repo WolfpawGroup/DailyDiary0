@@ -158,6 +158,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\square.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="bin\Debug\ibeam.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

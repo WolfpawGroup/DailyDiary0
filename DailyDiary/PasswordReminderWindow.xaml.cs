@@ -55,17 +55,24 @@ namespace DailyDiary
 					code += b.ToString("X2").ToUpper();
 				}
 
-				MailMessage mail = new MailMessage("noreply.wolfpawstudios+DailyDiary@gmail.com", email);
-				SmtpClient client = new SmtpClient();
-				client.Port = 587;
-				client.EnableSsl = true;
-				client.DeliveryMethod = SmtpDeliveryMethod.Network;
-				client.UseDefaultCredentials = false;
-				client.Credentials = new NetworkCredential("noreply.wolfpawstudios", "Alpha666");
-				client.Host = "smtp.gmail.com";
-				mail.Subject = "Password reminder";
-				mail.Body = "TEST → " + code;
-				client.Send(mail);
+				try
+				{
+					MailMessage mail = new MailMessage("noreply.wolfpawstudios+DailyDiary@gmail.com", email);
+					SmtpClient client = new SmtpClient();
+					client.Port = 587;
+					client.EnableSsl = true;
+					client.DeliveryMethod = SmtpDeliveryMethod.Network;
+					client.UseDefaultCredentials = false;
+					client.Credentials = new NetworkCredential("noreply.wolfpawstudios", "Alpha666");
+					client.Host = "smtp.gmail.com";
+					mail.Subject = "Password reminder";
+					mail.Body = "TEST → " + code;
+					client.Send(mail);
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show(ex.Message, ex.GetBaseException().ToString(), MessageBoxButton.OK, MessageBoxImage.Error);
+				}
 
 				pass = pwd;
 			}

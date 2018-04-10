@@ -214,5 +214,29 @@ namespace DailyDiary.Properties {
                 this["s_SingleUserMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool s_AskBeforeChange {
+            get {
+                return ((bool)(this["s_AskBeforeChange"]));
+            }
+            set {
+                this["s_AskBeforeChange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string s_SingleUserUsername {
+            get {
+                return ((string)(this["s_SingleUserUsername"]));
+            }
+            set {
+                this["s_SingleUserUsername"] = value;
+            }
+        }
     }
 }
