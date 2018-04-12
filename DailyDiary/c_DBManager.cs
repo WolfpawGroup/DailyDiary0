@@ -280,6 +280,26 @@ namespace DailyDiary
 			return ret;
 		}
 
+		public static bool changePass(SQLiteConnection sqlc, string username, string password)
+		{
+			bool ret = false;
+			if (sqlc.State != System.Data.ConnectionState.Open) { return ret; }
+
+			try
+			{
+				SQLiteCommand sqlk = new SQLiteCommand("UPDATE users SET password='" + encryptData(password, username) + "' WHERE username ='" + username + "'", sqlc);
+				sqlk.ExecuteNonQuery();
+				ret = true;
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+				ret = false;
+			}
+
+			return ret;
+		}
+
 		public static bool login(SQLiteConnection sqlc, string username, string password)
 		{
 			bool ret = false;

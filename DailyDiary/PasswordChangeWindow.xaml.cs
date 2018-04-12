@@ -33,5 +33,60 @@ namespace DailyDiary
 		{
 			
 		}
+
+		private void btn_Cancel_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btn_ChangePass_Click(object sender, RoutedEventArgs e)
+		{
+			tb_Name.Background = Brushes.White;
+			pb_OldPass.Background = Brushes.White;
+
+			if (c_DBManager.login(sqlc, tb_Name.Text, pb_OldPass.Password))
+			{
+				if (c_DBManager.changePass(sqlc, tb_Name.Text, pb_NewPass.Password))
+				{
+					this.Close();
+				}
+				else
+				{
+					tb_Name.Background = Brushes.LightPink;
+					pb_OldPass.Background = Brushes.LightPink;
+				}
+			}
+			else
+			{
+				tb_Name.Background = Brushes.LightPink;
+
+				if (c_DBManager.userExists(sqlc, tb_Name.Text))
+				{
+					pb_OldPass.Background = Brushes.LightPink;
+				}
+			}
+		}
+		
+		private void btn_OldPassShow_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+		{
+			tb_OldPass.Text = pb_OldPass.Password;
+			tb_OldPass.Visibility = Visibility.Visible;
+		}
+
+		private void btn_OldPassShow_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+		{
+			tb_OldPass.Visibility = Visibility.Hidden;
+		}
+
+		private void btn_NewPassShow_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+		{
+			tb_NewPass.Text = pb_NewPass.Password;
+			tb_NewPass.Visibility = Visibility.Visible;
+		}
+
+		private void btn_NewPassShow_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+		{
+			tb_NewPass.Visibility = Visibility.Hidden;
+		}
 	}
 }
