@@ -13,11 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using Google.Apis.Gmail.v1.Data;
-using Google.Apis.Gmail.v1;
-using Google.Apis.Gmail;
-using Google.Apis;
-
 using System.Security.Cryptography;
 using System.Net.Mail;
 using System.Net;
@@ -34,7 +29,7 @@ namespace DailyDiary
 		private string _requestId = "";
 		private string _requestTime = "";
 		public MD5CryptoServiceProvider md50 = new MD5CryptoServiceProvider();
-		public misc msc = new misc();
+		public DisplayHandler msc = new DisplayHandler();
 		
 		public PasswordReminderWindow()
 		{

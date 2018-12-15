@@ -130,6 +130,41 @@
   <data name="ibeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\ibeam.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="settings_JSON_Template" xml:space="preserve">
+    <value>{ "settings" : 
+	{
+		"username"							: "{username}",
+		"userid"							: "{userid}",
+		"c_day_Day"							: "{c_day_Day}",
+		"c_night_Day"						: "{c_night_Day}",
+		"c_day_MainBackground"				: "{c_day_MainBackground}",
+		"c_night_MainBackground"			: "{c_night_MainBackground}",
+		"c_day_SelectedDay"					: "{c_day_SelectedDay}",
+		"c_night_SelectedDay"				: "{c_night_SelectedDay}",
+		"c_day_Sunday"						: "{c_day_Sunday}",
+		"c_night_Sunday"					: "{c_night_Sunday}",
+		"c_day_TextboxBackground"			: "{c_day_TextboxBackground}",
+		"c_night_TextboxBackground"			: "{c_night_TextboxBackground}",
+		"c_day_Text"						: "{c_day_Text}",
+		"c_night_Text"						: "{c_night_Text}",
+		"c_day_TextSelection"				: "{c_day_TextSelection}",
+		"c_night_TextSelection"				: "{c_night_TextSelection}",
+		"c_day_DayText"						: "{c_day_DayText}",
+		"c_night_DayText"					: "{c_night_DayText}",
+		"b_AskBeforeChange"					: "{b_AskBeforeChange}",
+		"b_NightMode"						: "{b_NightMode}",
+		"b_PanelClosed"						: "{b_PanelClosed}",
+		"b_SingleUserMode"					: "{b_SingleUserMode}",
+		"b_SpellCheck"						: "{b_SpellCheck}",
+		"b_TextBox_WordWrap"				: "{b_TextBox_WordWrap}",
+		"b_TextBox_LightCursor"				: "{b_TextBox_LightCursor}",
+		"b_TextBox_LightCursor_NightOnly"	: "{b_TextBox_LightCursor_NightOnly}",
+		"TextBox_Align"						: "{TextBox_Align}",
+		"TextBox_Language"					: "{TextBox_Language}",
+		"SingleUser_UserName"				: "{SingleUser_UserName}"
+	}
+}</value>
+  </data>
   <data name="square" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

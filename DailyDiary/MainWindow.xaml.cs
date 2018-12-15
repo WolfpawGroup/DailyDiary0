@@ -18,6 +18,7 @@ using System.IO;
 using System.Windows.Controls.Primitives;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using DailyDiary.Properties;
 
 namespace DailyDiary
 {
@@ -72,191 +73,7 @@ namespace DailyDiary
 
 		public void loadLangs()
 		{
-			langs.Add("aa", "Afar");
-			langs.Add("ab", "Abkhazian");
-			langs.Add("af", "Afrikaans");
-			langs.Add("ak", "Akan");
-			langs.Add("sq", "Albanian");
-			langs.Add("am", "Amharic");
-			langs.Add("ar", "Arabic");
-			langs.Add("an", "Aragonese");
-			langs.Add("hy", "Armenian");
-			langs.Add("as", "Assamese");
-			langs.Add("av", "Avaric");
-			langs.Add("ae", "Avestan");
-			langs.Add("ay", "Aymara");
-			langs.Add("az", "Azerbaijani");
-			langs.Add("ba", "Bashkir");
-			langs.Add("bm", "Bambara");
-			langs.Add("eu", "Basque");
-			langs.Add("be", "Belarusian");
-			langs.Add("bn", "Bengali");
-			langs.Add("bh", "Bihari languages");
-			langs.Add("bi", "Bislama");
-			langs.Add("bs", "Bosnian");
-			langs.Add("br", "Breton");
-			langs.Add("bg", "Bulgarian");
-			langs.Add("my", "Burmese");
-			langs.Add("ca", "Catalan");
-			langs.Add("ch", "Chamorro");
-			langs.Add("ce", "Chechen");
-			langs.Add("zh", "Chinese");
-			langs.Add("cu", "Church Slavic");
-			langs.Add("cv", "Chuvash");
-			langs.Add("kw", "Cornish");
-			langs.Add("co", "Corsican");
-			langs.Add("cr", "Cree");
-			langs.Add("cs", "Czech");
-			langs.Add("da", "Danish");
-			langs.Add("dv", "Divehi");
-			langs.Add("nl", "Dutch");
-			langs.Add("dz", "Dzongkha");
-			langs.Add("en-UK", "English UK");
-			langs.Add("en-US", "English US");
-			langs.Add("eo", "Esperanto");
-			langs.Add("et", "Estonian");
-			langs.Add("ee", "Ewe");
-			langs.Add("fo", "Faroese");
-			langs.Add("fj", "Fijian");
-			langs.Add("fi", "Finnish");
-			langs.Add("fr", "French");
-			langs.Add("fy", "Western Frisian");
-			langs.Add("ff", "Fulah");
-			langs.Add("ka", "Georgian");
-			langs.Add("de", "German");
-			langs.Add("gd", "Gaelic");
-			langs.Add("ga", "Irish");
-			langs.Add("gl", "Galician");
-			langs.Add("gv", "Manx");
-			langs.Add("el", "Greek");
-			langs.Add("gn", "Guarani");
-			langs.Add("gu", "Gujarati");
-			langs.Add("ht", "Haitian");
-			langs.Add("ha", "Hausa");
-			langs.Add("he", "Hebrew");
-			langs.Add("hz", "Herero");
-			langs.Add("hi", "Hindi");
-			langs.Add("ho", "Hiri Motu");
-			langs.Add("hr", "Croatian");
-			langs.Add("hu", "Hungarian");
-			langs.Add("ig", "Igbo");
-			langs.Add("is", "Icelandic");
-			langs.Add("io", "Ido");
-			langs.Add("ii", "Sichuan Yi");
-			langs.Add("iu", "Inuktitut");
-			langs.Add("ie", "Occidental");
-			langs.Add("ia", "Interlingua");
-			langs.Add("id", "Indonesian");
-			langs.Add("ik", "Inupiaq");
-			langs.Add("it", "Italian");
-			langs.Add("jv", "Javanese");
-			langs.Add("ja", "Japanese");
-			langs.Add("kl", "Greenlandic");
-			langs.Add("kn", "Kannada");
-			langs.Add("ks", "Kashmiri");
-			langs.Add("kr", "Kanuri");
-			langs.Add("kk", "Kazakh");
-			langs.Add("km", "Central Khmer");
-			langs.Add("ki", "Kikuyu");
-			langs.Add("rw", "Kinyarwanda");
-			langs.Add("ky", "Kirghiz");
-			langs.Add("kv", "Komi");
-			langs.Add("kg", "Kongo");
-			langs.Add("ko", "Korean");
-			langs.Add("kj", "Kuanyama");
-			langs.Add("ku", "Kurdish");
-			langs.Add("lo", "Lao");
-			langs.Add("la", "Latin");
-			langs.Add("lv", "Latvian");
-			langs.Add("li", "Limburgan");
-			langs.Add("ln", "Lingala");
-			langs.Add("lt", "Lithuanian");
-			langs.Add("lb", "Luxembourgish");
-			langs.Add("lu", "Luba-Katanga");
-			langs.Add("lg", "Ganda");
-			langs.Add("mk", "Macedonian");
-			langs.Add("mh", "Marshallese");
-			langs.Add("ml", "Malayalam");
-			langs.Add("mi", "Maori");
-			langs.Add("mr", "Marathi");
-			langs.Add("ms", "Malay");
-			langs.Add("mg", "Malagasy");
-			langs.Add("mt", "Maltese");
-			langs.Add("mn", "Mongolian");
-			langs.Add("na", "Nauru");
-			langs.Add("nv", "Navajo");
-			langs.Add("nr", "South Ndebele");
-			langs.Add("nd", "North Ndebele");
-			langs.Add("ng", "Ndonga");
-			langs.Add("ne", "Nepali");
-			langs.Add("nn", "Nynorsk");
-			langs.Add("nb", "Norwegian (NB)");
-			langs.Add("no", "Norwegian (NO)");
-			langs.Add("ny", "Nyanja");
-			langs.Add("oc", "Occitan");
-			langs.Add("oj", "Ojibwa");
-			langs.Add("or", "Oriya");
-			langs.Add("om", "Oromo");
-			langs.Add("os", "Ossetic");
-			langs.Add("pa", "Panjabi");
-			langs.Add("fa", "Persian");
-			langs.Add("pi", "Pali");
-			langs.Add("pl", "Polish");
-			langs.Add("pt", "Portuguese");
-			langs.Add("ps", "Pushto");
-			langs.Add("qu", "Quechua");
-			langs.Add("rm", "Romansh");
-			langs.Add("ro", "Romanian");
-			langs.Add("rn", "Rundi");
-			langs.Add("ru", "Russian");
-			langs.Add("sg", "Sango");
-			langs.Add("sa", "Sanskrit");
-			langs.Add("si", "Sinhala");
-			langs.Add("sk", "Slovak");
-			langs.Add("sl", "Slovenian");
-			langs.Add("se", "Northern Sami");
-			langs.Add("sm", "Samoan");
-			langs.Add("sn", "Shona");
-			langs.Add("sd", "Sindhi");
-			langs.Add("so", "Somali");
-			langs.Add("st", "Sotho, Southern");
-			langs.Add("es", "Spanish");
-			langs.Add("sc", "Sardinian");
-			langs.Add("sr", "Serbian");
-			langs.Add("ss", "Swati");
-			langs.Add("su", "Sundanese");
-			langs.Add("sw", "Swahili");
-			langs.Add("sv", "Swedish");
-			langs.Add("ty", "Tahitian");
-			langs.Add("ta", "Tamil");
-			langs.Add("tt", "Tatar");
-			langs.Add("te", "Telugu");
-			langs.Add("tg", "Tajik");
-			langs.Add("tl", "Tagalog");
-			langs.Add("th", "Thai");
-			langs.Add("bo", "Tibetan");
-			langs.Add("ti", "Tigrinya");
-			langs.Add("to", "Tonga");
-			langs.Add("tn", "Tswana");
-			langs.Add("ts", "Tsonga");
-			langs.Add("tk", "Turkmen");
-			langs.Add("tr", "Turkish");
-			langs.Add("tw", "Twi");
-			langs.Add("ug", "Uighur; Uyghur");
-			langs.Add("uk", "Ukrainian");
-			langs.Add("ur", "Urdu");
-			langs.Add("uz", "Uzbek");
-			langs.Add("ve", "Venda");
-			langs.Add("vi", "Vietnamese");
-			langs.Add("vo", "VolapÃ¼k");
-			langs.Add("cy", "Welsh");
-			langs.Add("wa", "Walloon");
-			langs.Add("wo", "Wolof");
-			langs.Add("xh", "Xhosa");
-			langs.Add("yi", "Yiddish");
-			langs.Add("yo", "Yoruba");
-			langs.Add("za", "Zhuang; Chuang");
-			langs.Add("zu", "Zulu");
+			langs = misc.fillLangs();
 
 			foreach(var v in langs)
 			{
@@ -336,6 +153,9 @@ namespace DailyDiary
 
 		public void loadSettings()
 		{
+			mySettings settings = new mySettings(new mySettings_Settings());
+			settings.fillSettings("");
+
 			if (File.Exists("ibeam.cur"))
 			{
 				myCursor = new Cursor(File.OpenRead(System.AppDomain.CurrentDomain.BaseDirectory + "ibeam.cur"));
@@ -929,7 +749,7 @@ namespace DailyDiary
 
 		public void showHideSearchPanel()
 		{
-			misc msc = new misc();
+			DisplayHandler msc = new DisplayHandler();
 			if(cb_SearchPanel.Width == 0)
 			{
 				msc.showControl(cb_SearchPanel, 250, 5);

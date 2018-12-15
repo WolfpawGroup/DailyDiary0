@@ -99,6 +99,27 @@ namespace DailyDiary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to { &quot;settings&quot; : 
+        ///	{
+        ///		&quot;username&quot;							: &quot;{username}&quot;,
+        ///		&quot;userid&quot;							: &quot;{userid}&quot;,
+        ///		&quot;c_day_Day&quot;							: &quot;{c_day_Day}&quot;,
+        ///		&quot;c_night_Day&quot;						: &quot;{c_night_Day}&quot;,
+        ///		&quot;c_day_MainBackground&quot;				: &quot;{c_day_MainBackground}&quot;,
+        ///		&quot;c_night_MainBackground&quot;			: &quot;{c_night_MainBackground}&quot;,
+        ///		&quot;c_day_SelectedDay&quot;					: &quot;{c_day_SelectedDay}&quot;,
+        ///		&quot;c_night_SelectedDay&quot;				: &quot;{c_night_SelectedDay}&quot;,
+        ///		&quot;c_day_Sunday&quot;						: &quot;{c_day_Sunday}&quot;,
+        ///		&quot;c_night_Sunday&quot;					: &quot;{c_night_Sunday}&quot;,
+        ///		&quot;c_day_TextboxBackground&quot;			: [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string settings_JSON_Template {
+            get {
+                return ResourceManager.GetString("settings_JSON_Template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap square {
