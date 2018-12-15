@@ -43,7 +43,7 @@ namespace DailyDiary
 
 			b = rect_Color_Day_Day.Fill;
 			c = ((SolidColorBrush)b).Color;
-			Properties.Settings.Default.s_dayColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
+			Properties.Settings.Default.s_day_DayColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
 
 			b = rect_Color_Night_Day.Fill;
 			c = ((SolidColorBrush)b).Color;
@@ -53,7 +53,7 @@ namespace DailyDiary
 
 			b = rect_Color_Day_BG.Fill;
 			c = ((SolidColorBrush)b).Color;
-			Properties.Settings.Default.s_mainBackgroundColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
+			Properties.Settings.Default.s_day_MainBackgroundColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
 
 			b = rect_Color_Night_BG.Fill;
 			c = ((SolidColorBrush)b).Color;
@@ -63,7 +63,7 @@ namespace DailyDiary
 
 			b = rect_Color_Day_DayText.Fill;
 			c = ((SolidColorBrush)b).Color;
-			Properties.Settings.Default.s_dayTextColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
+			Properties.Settings.Default.s_day_DayTextColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
 
 			b = rect_Color_Night_DayText.Fill;
 			c = ((SolidColorBrush)b).Color;
@@ -73,7 +73,7 @@ namespace DailyDiary
 
 			b = rect_Color_Day_Sunday.Fill;
 			c = ((SolidColorBrush)b).Color;
-			Properties.Settings.Default.s_sundayColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
+			Properties.Settings.Default.s_day_SundayColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
 
 			b = rect_Color_Night_Sunday.Fill;
 			c = ((SolidColorBrush)b).Color;
@@ -83,7 +83,7 @@ namespace DailyDiary
 
 			b = rect_Color_Day_Text.Fill;
 			c = ((SolidColorBrush)b).Color;
-			Properties.Settings.Default.s_dayTextColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
+			Properties.Settings.Default.s_day_DayTextColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
 
 			b = rect_Color_Night_Text.Fill;
 			c = ((SolidColorBrush)b).Color;
@@ -93,7 +93,7 @@ namespace DailyDiary
 
 			b = rect_Color_Day_TextBG.Fill;
 			c = ((SolidColorBrush)b).Color;
-			Properties.Settings.Default.s_textboxBackgroundColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
+			Properties.Settings.Default.s_day_TextboxBackgroundColor = System.Drawing.Color.FromArgb(255, c.R, c.G, c.B);
 
 			b = rect_Color_Night_TextBG.Fill;
 			c = ((SolidColorBrush)b).Color;
@@ -136,7 +136,7 @@ namespace DailyDiary
 			System.Drawing.Color c = Properties.Settings.Default.s_night_DayColor;
 			rect_Color_Night_Day.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
-			c = Properties.Settings.Default.s_dayColor;
+			c = Properties.Settings.Default.s_day_DayColor;
 			rect_Color_Day_Day.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
 			//----
@@ -144,7 +144,7 @@ namespace DailyDiary
 			c = Properties.Settings.Default.s_night_SundayColor;
 			rect_Color_Night_Sunday.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
-			c = Properties.Settings.Default.s_sundayColor;
+			c = Properties.Settings.Default.s_day_SundayColor;
 			rect_Color_Day_Sunday.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
 			//----
@@ -152,7 +152,7 @@ namespace DailyDiary
 			c = Properties.Settings.Default.s_night_MainBackgroundColor;
 			rect_Color_Night_BG.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
-			c = Properties.Settings.Default.s_mainBackgroundColor;
+			c = Properties.Settings.Default.s_day_MainBackgroundColor;
 			rect_Color_Day_BG.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
 			//----
@@ -160,7 +160,7 @@ namespace DailyDiary
 			c = Properties.Settings.Default.s_night_TextboxBackgroundColor;
 			rect_Color_Night_TextBG.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
-			c = Properties.Settings.Default.s_textboxBackgroundColor;
+			c = Properties.Settings.Default.s_day_TextboxBackgroundColor;
 			rect_Color_Day_TextBG.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
 			//----
@@ -168,7 +168,7 @@ namespace DailyDiary
 			c = Properties.Settings.Default.s_night_TextColor;
 			rect_Color_Night_Text.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
-			c = Properties.Settings.Default.s_textColor;
+			c = Properties.Settings.Default.s_day_TextColor;
 			rect_Color_Day_Text.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
 			//----
@@ -176,7 +176,7 @@ namespace DailyDiary
 			c = Properties.Settings.Default.s_night_DayTextColor;
 			rect_Color_Night_DayText.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
-			c = Properties.Settings.Default.s_dayTextColor;
+			c = Properties.Settings.Default.s_day_DayTextColor;
 			rect_Color_Day_DayText.Fill = new SolidColorBrush(new Color() { A = c.A, R = c.R, G = c.G, B = c.B });
 
 			setupToolTips();

@@ -46,6 +46,7 @@ namespace DailyDiary
 
 		private void cb_ShowPass_Checked(object sender, RoutedEventArgs e)
 		{
+			tb_Pass_Clear.Margin = tb_Pass.Margin;
 			tb_Pass_Clear.Text = tb_Pass.Password;
 			tb_Pass_Clear.Visibility = Visibility.Visible;
 		}
@@ -133,7 +134,7 @@ namespace DailyDiary
 
 		private void btn_Quit_Click(object sender, RoutedEventArgs e)
 		{
-			Environment.Exit(0);
+			this.Close();
 		}
 
 		private void btn_ForgotMyPass_Click(object sender, RoutedEventArgs e)

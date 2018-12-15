@@ -12,7 +12,7 @@ namespace DailyDiary.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,60 +26,60 @@ namespace DailyDiary.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
-        public global::System.Drawing.Color s_dayColor {
+        public global::System.Drawing.Color s_day_DayColor {
             get {
-                return ((global::System.Drawing.Color)(this["s_dayColor"]));
+                return ((global::System.Drawing.Color)(this["s_day_DayColor"]));
             }
             set {
-                this["s_dayColor"] = value;
+                this["s_day_DayColor"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color s_sundayColor {
+        public global::System.Drawing.Color s_day_SundayColor {
             get {
-                return ((global::System.Drawing.Color)(this["s_sundayColor"]));
+                return ((global::System.Drawing.Color)(this["s_day_SundayColor"]));
             }
             set {
-                this["s_sundayColor"] = value;
+                this["s_day_SundayColor"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color s_mainBackgroundColor {
+        public global::System.Drawing.Color s_day_MainBackgroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["s_mainBackgroundColor"]));
+                return ((global::System.Drawing.Color)(this["s_day_MainBackgroundColor"]));
             }
             set {
-                this["s_mainBackgroundColor"] = value;
+                this["s_day_MainBackgroundColor"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color s_textboxBackgroundColor {
+        public global::System.Drawing.Color s_day_TextboxBackgroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["s_textboxBackgroundColor"]));
+                return ((global::System.Drawing.Color)(this["s_day_TextboxBackgroundColor"]));
             }
             set {
-                this["s_textboxBackgroundColor"] = value;
+                this["s_day_TextboxBackgroundColor"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color s_textColor {
+        public global::System.Drawing.Color s_day_TextColor {
             get {
-                return ((global::System.Drawing.Color)(this["s_textColor"]));
+                return ((global::System.Drawing.Color)(this["s_day_TextColor"]));
             }
             set {
-                this["s_textColor"] = value;
+                this["s_day_TextColor"] = value;
             }
         }
         
@@ -146,12 +146,12 @@ namespace DailyDiary.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color s_dayTextColor {
+        public global::System.Drawing.Color s_day_DayTextColor {
             get {
-                return ((global::System.Drawing.Color)(this["s_dayTextColor"]));
+                return ((global::System.Drawing.Color)(this["s_day_DayTextColor"]));
             }
             set {
-                this["s_dayTextColor"] = value;
+                this["s_day_DayTextColor"] = value;
             }
         }
         
@@ -169,7 +169,7 @@ namespace DailyDiary.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool s_textboxLightCursor {
             get {
                 return ((bool)(this["s_textboxLightCursor"]));
@@ -193,7 +193,7 @@ namespace DailyDiary.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool s_textboxLightCursorNightOnly {
             get {
                 return ((bool)(this["s_textboxLightCursorNightOnly"]));
@@ -236,6 +236,114 @@ namespace DailyDiary.Properties {
             }
             set {
                 this["s_SingleUserUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_NightMode {
+            get {
+                return ((bool)(this["s_NightMode"]));
+            }
+            set {
+                this["s_NightMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Green")]
+        public global::System.Drawing.Color s_day_SelectedDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_day_SelectedDayColor"]));
+            }
+            set {
+                this["s_day_SelectedDayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Yellow")]
+        public global::System.Drawing.Color s_night_SelectedDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_SelectedDayColor"]));
+            }
+            set {
+                this["s_night_SelectedDayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Highlight")]
+        public global::System.Drawing.Color s_day_TextSelectionBrush {
+            get {
+                return ((global::System.Drawing.Color)(this["s_day_TextSelectionBrush"]));
+            }
+            set {
+                this["s_day_TextSelectionBrush"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkGoldenrod")]
+        public global::System.Drawing.Color s_night_TextSelectionBrush {
+            get {
+                return ((global::System.Drawing.Color)(this["s_night_TextSelectionBrush"]));
+            }
+            set {
+                this["s_night_TextSelectionBrush"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("en-US")]
+        public string s_tbLanguage {
+            get {
+                return ((string)(this["s_tbLanguage"]));
+            }
+            set {
+                this["s_tbLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_tbSpellCheck {
+            get {
+                return ((bool)(this["s_tbSpellCheck"]));
+            }
+            set {
+                this["s_tbSpellCheck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool s_tbWordWrap {
+            get {
+                return ((bool)(this["s_tbWordWrap"]));
+            }
+            set {
+                this["s_tbWordWrap"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int s_tbAlign {
+            get {
+                return ((int)(this["s_tbAlign"]));
+            }
+            set {
+                this["s_tbAlign"] = value;
             }
         }
     }

@@ -266,15 +266,33 @@ namespace DailyDiary
 
 		public static int getUserId(SQLiteConnection sqlc, string username)
 		{
-			if (sqlc.State != System.Data.ConnectionState.Open) { return -1; }
+			if (sqlc.State != ConnectionState.Open) { return -1; }
 
 			int ret = -1;
 
 			SQLiteCommand sqlk = new SQLiteCommand("SELECT id FROM users WHERE username = '" + username + "'", sqlc);
 			var rr = sqlk.ExecuteScalar();
 			if (rr is null) { ret = -1; }
-			else {
+			else
+			{
 				int.TryParse(rr.ToString(), out ret);
+			}
+
+			return ret;
+		}
+
+		public static string getUserName(SQLiteConnection sqlc, int userID)
+		{
+			if (sqlc.State != ConnectionState.Open) { return ""; }
+
+			string ret = "";
+
+			SQLiteCommand sqlk = new SQLiteCommand("SELECT username FROM users WHERE id = '" + userID + "'", sqlc);
+			var rr = sqlk.ExecuteScalar();
+			if (rr is null) { ret = ""; }
+			else
+			{
+				ret = rr.ToString();
 			}
 
 			return ret;
@@ -283,7 +301,7 @@ namespace DailyDiary
 		public static bool changePass(SQLiteConnection sqlc, string username, string password)
 		{
 			bool ret = false;
-			if (sqlc.State != System.Data.ConnectionState.Open) { return ret; }
+			if (sqlc.State != ConnectionState.Open) { return ret; }
 
 			try
 			{
@@ -350,13 +368,29 @@ namespace DailyDiary
 		{
 			if (sqlc.State != ConnectionState.Open) { return null; }
 			Dictionary<int, string> days = new Dictionary<int, string>();
-
 			SQLiteCommand sqlk = new SQLiteCommand(string.Format("SELECT day, COALESCE(title,'') as title FROM data WHERE userid={0} AND year={1} AND month={2}", userid, year, month), sqlc);
+
 			SQLiteDataReader r = sqlk.ExecuteReader();
 
 			while (r.Read())
 			{
 				days.Add(r.GetInt32(r.GetOrdinal("day")), r.GetString(r.GetOrdinal("title")));
+			}
+
+			return days;
+		}
+
+		public static Dictionary<DateTime, string> getDatesForUser(SQLiteConnection sqlc, int userid, string username)
+		{
+			if (sqlc.State != ConnectionState.Open) { return null; }
+			Dictionary<DateTime, string> days = new Dictionary<DateTime, string>();
+			SQLiteCommand sqlk = new SQLiteCommand(string.Format("SELECT year || '.' || month || '.' || day as date, COALESCE(title,'') as title FROM data WHERE userid={0}", userid), sqlc);
+			
+			SQLiteDataReader r = sqlk.ExecuteReader();
+
+			while (r.Read())
+			{
+				days.Add(Convert.ToDateTime(r.GetString(r.GetOrdinal("date"))), decryptData(r.GetString(r.GetOrdinal("title")), username));
 			}
 
 			return days;
