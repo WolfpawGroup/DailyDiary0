@@ -102,16 +102,34 @@ namespace DailyDiary.Properties {
         ///   Looks up a localized string similar to { &quot;settings&quot; : 
         ///	{
         ///		&quot;username&quot;							: &quot;{username}&quot;,
-        ///		&quot;userid&quot;							: &quot;{userid}&quot;,
-        ///		&quot;c_day_Day&quot;							: &quot;{c_day_Day}&quot;,
-        ///		&quot;c_night_Day&quot;						: &quot;{c_night_Day}&quot;,
-        ///		&quot;c_day_MainBackground&quot;				: &quot;{c_day_MainBackground}&quot;,
-        ///		&quot;c_night_MainBackground&quot;			: &quot;{c_night_MainBackground}&quot;,
-        ///		&quot;c_day_SelectedDay&quot;					: &quot;{c_day_SelectedDay}&quot;,
-        ///		&quot;c_night_SelectedDay&quot;				: &quot;{c_night_SelectedDay}&quot;,
-        ///		&quot;c_day_Sunday&quot;						: &quot;{c_day_Sunday}&quot;,
-        ///		&quot;c_night_Sunday&quot;					: &quot;{c_night_Sunday}&quot;,
-        ///		&quot;c_day_TextboxBackground&quot;			: [rest of string was truncated]&quot;;.
+        ///		&quot;userid&quot;							: {userid},
+        ///		&quot;c_day_Day&quot;							: {&quot;A&quot; : 255, &quot;R&quot;: 211, &quot;G&quot; : 211, &quot;B&quot; : 211},
+        ///		&quot;c_night_Day&quot;						: {&quot;A&quot; : 255, &quot;R&quot;: 064, &quot;G&quot; : 064, &quot;B&quot; : 064},
+        ///		&quot;c_day_MainBackground&quot;				: {&quot;A&quot; : 255, &quot;R&quot;: 255, &quot;G&quot; : 255, &quot;B&quot; : 255},
+        ///		&quot;c_night_MainBackground&quot;			: {&quot;A&quot; : 255, &quot;R&quot;: 169, &quot;G&quot; : 169, &quot;B&quot; : 169},
+        ///		&quot;c_day_SelectedDay&quot;					: {&quot;A&quot; : 255, &quot;R&quot;: 000, &quot;G&quot; : 128, &quot;B&quot; : 000},
+        ///		&quot;c_night_SelectedDay&quot;				: {&quot;A&quot; : 255, &quot;R&quot;: 255, &quot;G&quot; : 255, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string settings_JSON_Default {
+            get {
+                return ResourceManager.GetString("settings_JSON_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to { &quot;settings&quot; : 
+        ///	{
+        ///		&quot;username&quot;							: &quot;{username}&quot;,
+        ///		&quot;userid&quot;							: {userid},
+        ///		&quot;c_day_Day&quot;							: {c_day_Day},
+        ///		&quot;c_night_Day&quot;						: {c_night_Day},
+        ///		&quot;c_day_MainBackground&quot;				: {c_day_MainBackground},
+        ///		&quot;c_night_MainBackground&quot;			: {c_night_MainBackground},
+        ///		&quot;c_day_SelectedDay&quot;					: {c_day_SelectedDay},
+        ///		&quot;c_night_SelectedDay&quot;				: {c_night_SelectedDay},
+        ///		&quot;c_day_Sunday&quot;						: {c_day_Sunday},
+        ///		&quot;c_night_Sunday&quot;					: {c_night_Sunday},
+        ///		&quot;c_day_TextboxBackground&quot;			: {c_day_TextboxBac [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string settings_JSON_Template {
             get {

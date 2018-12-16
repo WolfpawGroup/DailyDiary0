@@ -153,8 +153,9 @@ namespace DailyDiary
 
 		public void loadSettings()
 		{
-			mySettings settings = new mySettings(new mySettings_Settings());
-			settings.fillSettings("");
+			mySettings mySettings = new mySettings(new mySettings_Settings()) { sqlc = sqlc, userid = userid, username = username };
+			if (!mySettings.hasSettings()) { mySettings.initializeSettings(); }
+			mySettings_Settings settings = mySettings.getSettings();
 
 			if (File.Exists("ibeam.cur"))
 			{

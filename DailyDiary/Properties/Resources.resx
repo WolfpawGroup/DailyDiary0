@@ -130,27 +130,62 @@
   <data name="ibeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\ibeam.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="settings_JSON_Default" xml:space="preserve">
+    <value>{ "settings" : 
+	{
+		"username"							: "{username}",
+		"userid"							: {userid},
+		"c_day_Day"							: {"A" : 255, "R": 211, "G" : 211, "B" : 211},
+		"c_night_Day"						: {"A" : 255, "R": 064, "G" : 064, "B" : 064},
+		"c_day_MainBackground"				: {"A" : 255, "R": 255, "G" : 255, "B" : 255},
+		"c_night_MainBackground"			: {"A" : 255, "R": 169, "G" : 169, "B" : 169},
+		"c_day_SelectedDay"					: {"A" : 255, "R": 000, "G" : 128, "B" : 000},
+		"c_night_SelectedDay"				: {"A" : 255, "R": 255, "G" : 255, "B" : 000},
+		"c_day_Sunday"						: {"A" : 255, "R": 255, "G" : 000, "B" : 000},
+		"c_night_Sunday"					: {"A" : 255, "R": 255, "G" : 128, "B" : 000},
+		"c_day_TextboxBackground"			: {"A" : 255, "R": 255, "G" : 255, "B" : 255},
+		"c_night_TextboxBackground"			: {"A" : 255, "R": 128, "G" : 128, "B" : 128},
+		"c_day_Text"						: {"A" : 255, "R": 000, "G" : 000, "B" : 000},
+		"c_night_Text"						: {"A" : 255, "R": 220, "G" : 220, "B" : 220},
+		"c_day_TextSelection"				: {"A" : 255, "R": 051, "G" : 153, "B" : 255},
+		"c_night_TextSelection"				: {"A" : 255, "R": 184, "G" : 134, "B" : 011},
+		"c_day_DayText"						: {"A" : 255, "R": 000, "G" : 000, "B" : 000},
+		"c_night_DayText"					: {"A" : 255, "R": 220, "G" : 220, "B" : 220},
+		"b_AskBeforeChange"					: "true",
+		"b_NightMode"						: "false",
+		"b_PanelClosed"						: "false",
+		"b_SingleUserMode"					: "false",
+		"b_SpellCheck"						: "true",
+		"b_TextBox_WordWrap"				: "true",
+		"b_TextBox_LightCursor"				: "true",
+		"b_TextBox_LightCursor_NightOnly"	: "true",
+		"TextBox_Align"						: 1,
+		"TextBox_Language"					: "en-US",
+		"SingleUser_UserName"				: ""
+	}
+}</value>
+  </data>
   <data name="settings_JSON_Template" xml:space="preserve">
     <value>{ "settings" : 
 	{
 		"username"							: "{username}",
-		"userid"							: "{userid}",
-		"c_day_Day"							: "{c_day_Day}",
-		"c_night_Day"						: "{c_night_Day}",
-		"c_day_MainBackground"				: "{c_day_MainBackground}",
-		"c_night_MainBackground"			: "{c_night_MainBackground}",
-		"c_day_SelectedDay"					: "{c_day_SelectedDay}",
-		"c_night_SelectedDay"				: "{c_night_SelectedDay}",
-		"c_day_Sunday"						: "{c_day_Sunday}",
-		"c_night_Sunday"					: "{c_night_Sunday}",
-		"c_day_TextboxBackground"			: "{c_day_TextboxBackground}",
-		"c_night_TextboxBackground"			: "{c_night_TextboxBackground}",
-		"c_day_Text"						: "{c_day_Text}",
-		"c_night_Text"						: "{c_night_Text}",
-		"c_day_TextSelection"				: "{c_day_TextSelection}",
-		"c_night_TextSelection"				: "{c_night_TextSelection}",
-		"c_day_DayText"						: "{c_day_DayText}",
-		"c_night_DayText"					: "{c_night_DayText}",
+		"userid"							: {userid},
+		"c_day_Day"							: {c_day_Day},
+		"c_night_Day"						: {c_night_Day},
+		"c_day_MainBackground"				: {c_day_MainBackground},
+		"c_night_MainBackground"			: {c_night_MainBackground},
+		"c_day_SelectedDay"					: {c_day_SelectedDay},
+		"c_night_SelectedDay"				: {c_night_SelectedDay},
+		"c_day_Sunday"						: {c_day_Sunday},
+		"c_night_Sunday"					: {c_night_Sunday},
+		"c_day_TextboxBackground"			: {c_day_TextboxBackground},
+		"c_night_TextboxBackground"			: {c_night_TextboxBackground},
+		"c_day_Text"						: {c_day_Text},
+		"c_night_Text"						: {c_night_Text},
+		"c_day_TextSelection"				: {c_day_TextSelection},
+		"c_night_TextSelection"				: {c_night_TextSelection},
+		"c_day_DayText"						: {c_day_DayText},
+		"c_night_DayText"					: {c_night_DayText},
 		"b_AskBeforeChange"					: "{b_AskBeforeChange}",
 		"b_NightMode"						: "{b_NightMode}",
 		"b_PanelClosed"						: "{b_PanelClosed}",
@@ -159,7 +194,7 @@
 		"b_TextBox_WordWrap"				: "{b_TextBox_WordWrap}",
 		"b_TextBox_LightCursor"				: "{b_TextBox_LightCursor}",
 		"b_TextBox_LightCursor_NightOnly"	: "{b_TextBox_LightCursor_NightOnly}",
-		"TextBox_Align"						: "{TextBox_Align}",
+		"TextBox_Align"						: {TextBox_Align},
 		"TextBox_Language"					: "{TextBox_Language}",
 		"SingleUser_UserName"				: "{SingleUser_UserName}"
 	}

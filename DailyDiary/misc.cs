@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DailyDiary.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -280,6 +281,16 @@ namespace DailyDiary
 			langs.Add("zu", "Zulu");
 
 			return langs;
+		}
+
+		public static JsonColor toJC(this System.Drawing.Color c)
+		{
+			return new JsonColor(c.A, c.R, c.G, c.B);
+		}
+
+		public static JsonColor toJasonColor(this System.Drawing.Color c)
+		{
+			return toJC(c);
 		}
 	}
 }

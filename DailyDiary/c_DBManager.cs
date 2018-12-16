@@ -164,6 +164,12 @@ namespace DailyDiary
 				sqlk = new SQLiteCommand("CREATE TABLE data (id INTEGER PRIMARY KEY AUTOINCREMENT, year INTEGER, month INTEGER, day INTEGER, data TEXT, title TEXT, userid INTEGER, last_updated TEXT);", sqlc);
 				sqlk.ExecuteNonQuery();
 			}
+
+			if (!tableExists(sqlc, "settings"))
+			{
+				sqlk = new SQLiteCommand("CREATE TABLE settings (id INTEGER PRIMARY KEY AUTOINCREMENT, userid INTEGER, settings TEXT, last_updated TEXT);", sqlc);
+				sqlk.ExecuteNonQuery();
+			}
 		}
 
 		public static string PWDReminder(SQLiteConnection sqlc, string username, string email)
@@ -192,7 +198,7 @@ namespace DailyDiary
 
 		public static string addUser(SQLiteConnection sqlc, string username, string pass, string date, string email)
 		{
-			if (sqlc.State != System.Data.ConnectionState.Open) { return "ERROR:NoOpenConnection"; }
+			if (sqlc.State != ConnectionState.Open) { return "ERROR:NoOpenConnection"; }
 
 			SQLiteCommand sqlk = new SQLiteCommand("SELECT username FROM users", sqlc);
 			var r = sqlk.ExecuteReader();
@@ -203,9 +209,52 @@ namespace DailyDiary
 			}
 
 			sqlk = new SQLiteCommand(string.Format("INSERT INTO users (username, password, email, date) VALUES ('{0}','{1}','{2}','{3}')", username, pass, email, date), sqlc);
-			sqlk.ExecuteNonQuery();
+			try
+			{
+				sqlk.ExecuteNonQuery();
+			}
+			catch(SQLiteException ex)
+			{
+				return "ERROR: " + ex.Message;
+			}
 
 			return "SUCCESS:UserCreated";
+		}
+
+		/// <summary>
+		/// Inserts or updates settings data for specific user in the settings table
+		/// </summary>
+		public static bool setSettings(SQLiteConnection sqlc, int userid, string settings)
+		{
+			if (sqlc.State != ConnectionState.Open) { return false; }
+			SQLiteCommand sqlk = new SQLiteCommand(string.Format("INSERT OR REPLACE INTO settings (userid, settings, last_updated) VALUES ('{0}','{1}','{2}')", userid, settings, DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString()), sqlc);
+			try
+			{
+				sqlk.ExecuteNonQuery();
+			}
+			catch (SQLiteException ex)
+			{
+				return false;
+			}
+
+			return true;
+		}
+		
+		/// <summary>
+		/// Returns settings for user, or &lt;NULL&gt; if there are none
+		/// </summary>
+		public static string getSettings(SQLiteConnection sqlc, int userid)
+		{
+			if (sqlc.State != ConnectionState.Open) { return "ERROR:NoOpenConnection"; }
+			string ret = "";
+			SQLiteCommand sqlk = new SQLiteCommand(string.Format("SELECT settings FROM settings where userid={0}", userid), sqlc);
+			SQLiteDataReader r = sqlk.ExecuteReader();
+			while (r.Read())
+			{
+				ret = r.GetString(r.GetOrdinal("settings"));
+			}
+
+			return ret == "" ? "<NULL>" : ret;
 		}
 
 		public static void addData(SQLiteConnection sqlc, int year, int month, int day, string title, string data, int userid)

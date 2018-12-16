@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace DailyDiary.Properties
 {
@@ -54,6 +53,10 @@ namespace DailyDiary.Properties
 	}
 
 	public class mySettings {
+		public System.Data.SQLite.SQLiteConnection sqlc { get; set; }
+		public string username { get; set; }
+		public int userid { get; set; }
+
 		/// <summary>
 		/// Mysettings_settings which contains the actual values
 		/// </summary>
@@ -157,33 +160,46 @@ namespace DailyDiary.Properties
 		}
 
 		/// <summary>
+		/// Returns a filled settings for a specific userid if it has one associated
+		/// </summary>
+		/// <param name="userid">The users id to get the settings for</param>
+		/// <returns>full settings</returns>
+		public mySettings_Settings getSettings()
+		{
+			fillSettings(c_DBManager.getSettings(sqlc, userid));
+			return _mySettings;
+		}
+
+		/// <summary>
 		/// Fills the setting container with values deserialized from the database entry
 		/// </summary>
 		/// <param name="settings">string contained in DB</param>
-		public void fillSettings(string settings)
+		/// <returns>true if success, false otherwise</returns>
+		public bool fillSettings(string settings)
 		{
+			if(settings == "") { return false; }
 				var definition = new
 				{
 					settings = new
 					{
 						username 							=	"",
 						userid 								=	0,
-						c_day_Day 							=	new { A = "", R = "", G = "", B = "" },
-						c_night_Day 						=	new { A = "", R = "", G = "", B = "" },
-						c_day_MainBackground 				=	new { A = "", R = "", G = "", B = "" },
-						c_night_MainBackground 				=	new { A = "", R = "", G = "", B = "" },
-						c_day_SelectedDay 					=	new { A = "", R = "", G = "", B = "" },
-						c_night_SelectedDay 				=	new { A = "", R = "", G = "", B = "" },
-						c_day_Sunday 						=	new { A = "", R = "", G = "", B = "" },
-						c_night_Sunday 						=	new { A = "", R = "", G = "", B = "" },
-						c_day_TextboxBackground 			=	new { A = "", R = "", G = "", B = "" },
-						c_night_TextboxBackground 			=	new { A = "", R = "", G = "", B = "" },
-						c_day_Text 							=	new { A = "", R = "", G = "", B = "" },
-						c_night_Text 						=	new { A = "", R = "", G = "", B = "" },
-						c_day_TextSelection 				=	new { A = "", R = "", G = "", B = "" },
-						c_night_TextSelection 				=	new { A = "", R = "", G = "", B = "" },
-						c_day_DayText 						=	new { A = "", R = "", G = "", B = "" },
-						c_night_DayText 					=	new { A = "", R = "", G = "", B = "" },
+						c_day_Day 							=	new JsonColor(0,0,0,0),
+						c_night_Day 						=	new JsonColor(0,0,0,0),
+						c_day_MainBackground 				=	new JsonColor(0,0,0,0),
+						c_night_MainBackground 				=	new JsonColor(0,0,0,0),
+						c_day_SelectedDay 					=	new JsonColor(0,0,0,0),
+						c_night_SelectedDay 				=	new JsonColor(0,0,0,0),
+						c_day_Sunday 						=	new JsonColor(0,0,0,0),
+						c_night_Sunday 						=	new JsonColor(0,0,0,0),
+						c_day_TextboxBackground 			=	new JsonColor(0,0,0,0),
+						c_night_TextboxBackground 			=	new JsonColor(0,0,0,0),
+						c_day_Text 							=	new JsonColor(0,0,0,0),
+						c_night_Text 						=	new JsonColor(0,0,0,0),
+						c_day_TextSelection 				=	new JsonColor(0,0,0,0),
+						c_night_TextSelection 				=	new JsonColor(0,0,0,0),
+						c_day_DayText 						=	new JsonColor(0,0,0,0),
+						c_night_DayText =						new JsonColor(0,0,0,0),
 						b_AskBeforeChange 					=	true,
 						b_NightMode 						=	true,
 						b_PanelClosed 						=	true,
@@ -198,43 +214,77 @@ namespace DailyDiary.Properties
 					}
 				};
 
-			string s =
-	@"{ ""settings"" : {
-				""username""                          : ""wolfyd"",
-				""userid""                            : ""1130"",
-				""c_day_Day""                         : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_Day""                       : {""A"" : 255, ""R"": 000, ""G"" : 255, ""B"" : 100},
-				""c_day_MainBackground""              : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_MainBackground""            : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_day_SelectedDay""                 : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_SelectedDay""               : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_day_Sunday""                      : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_Sunday""                    : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_day_TextboxBackground""           : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_TextboxBackground""         : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_day_Text""                        : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_Text""                      : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_day_TextSelection""               : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_TextSelection""             : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_day_DayText""                     : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""c_night_DayText""                   : {""A"" : 255, ""R"": 100, ""G"" : 100, ""B"" : 100},
-				""b_AskBeforeChange""                 : ""true"",
-				""b_NightMode""                       : ""false"",
-				""b_PanelClosed""                     : ""TRUE"",
-				""b_SingleUserMode""                  : ""FALSE"",
-				""b_SpellCheck""                      : ""TRUE"",
-				""b_TextBox_WordWrap""                : ""TRUE"",
-				""b_TextBox_LightCursor""             : ""true"",
-				""b_TextBox_LightCursor_NightOnly""   : ""false"",
-				""TextBox_Align""                     : ""-1"",
-				""TextBox_Language""                  : ""en-UK"",
-				""SingleUser_UserName""               : """"
+			var o = JsonConvert.DeserializeAnonymousType(settings, definition);
+
+			_mySettings.username							=	o.settings.username;
+			_mySettings.userid								=	o.settings.userid;
+			_mySettings.c_day_Day							=	o.settings.c_day_Day.Color;
+			_mySettings.c_night_Day							=	o.settings.c_night_Day.Color;
+			_mySettings.c_day_MainBackground				=	o.settings.c_day_MainBackground.Color;
+			_mySettings.c_night_MainBackground				=	o.settings.c_night_MainBackground.Color;
+			_mySettings.c_day_SelectedDay					=	o.settings.c_day_SelectedDay.Color;
+			_mySettings.c_night_SelectedDay					=	o.settings.c_night_SelectedDay.Color;
+			_mySettings.c_day_Sunday						=	o.settings.c_day_Sunday.Color;
+			_mySettings.c_night_Sunday						=	o.settings.c_night_Sunday.Color;
+			_mySettings.c_day_TextboxBackground				=	o.settings.c_day_TextboxBackground.Color;
+			_mySettings.c_night_TextboxBackground			=	o.settings.c_night_TextboxBackground.Color;
+			_mySettings.c_day_Text							=	o.settings.c_day_Text.Color;
+			_mySettings.c_night_Text						=	o.settings.c_night_Text.Color;
+			_mySettings.c_day_TextSelection					=	o.settings.c_day_TextSelection.Color;
+			_mySettings.c_night_TextSelection				=	o.settings.c_night_TextSelection.Color;
+			_mySettings.c_day_DayText						=	o.settings.c_day_DayText.Color;
+			_mySettings.c_night_DayText						=	o.settings.c_night_DayText.Color;
+			_mySettings.b_AskBeforeChange					=	o.settings.b_AskBeforeChange;
+			_mySettings.b_NightMode							=	o.settings.b_NightMode;
+			_mySettings.b_PanelClosed						=	o.settings.b_PanelClosed;
+			_mySettings.b_SingleUserMode					=	o.settings.b_SingleUserMode;
+			_mySettings.b_SpellCheck						=	o.settings.b_SpellCheck;
+			_mySettings.b_TextBox_WordWrap					=	o.settings.b_TextBox_WordWrap;
+			_mySettings.b_TextBox_LightCursor				=	o.settings.b_TextBox_LightCursor;
+			_mySettings.b_TextBox_LightCursor_NightOnly		=	o.settings.b_TextBox_LightCursor_NightOnly;
+			_mySettings.TextBox_Align						=	o.settings.TextBox_Align;
+			_mySettings.TextBox_Language					=	o.settings.TextBox_Language;
+			_mySettings.SingleUser_UserName					=	o.settings.SingleUser_UserName;
+
+			return true;
+		}
+		
+		/// <summary>
+		/// Initializes the settings datarow for the user with the default values
+		/// </summary>
+		public bool initializeSettings()
+		{
+			try
+			{
+				string json = Properties.Resources.settings_JSON_Default;
+				json = json.Replace("{username}",	username	).
+							Replace("{userid}",		userid + ""	);
+
+				fillSettings(json);
+				setSettings();
+				return true;
 			}
-		}";
-			settings = s;
+			catch(Exception ex)
+			{
+				Console.Error.WriteLine(ex.ToString());
+				return false;
+			}
+		}
 
-			object o = JsonConvert.DeserializeAnonymousType(settings, definition);
+		/// <summary>
+		/// Checks if the user has a line in the settings table
+		/// </summary>
+		public bool hasSettings()
+		{
+			return c_DBManager.getSettings(sqlc, userid) != "<NULL>";
+		}
 
+		/// <summary>
+		/// Sets the settings for the user in the settings table
+		/// </summary>
+		public bool setSettings()
+		{
+			return c_DBManager.setSettings(sqlc, userid, generateSettingsJson());
 		}
 
 		/// <summary>
@@ -245,38 +295,77 @@ namespace DailyDiary.Properties
 		{
 			string json = Properties.Resources.settings_JSON_Template;
 
-			json = json.Replace("{username}",							@"""" + _mySettings.username							+ @"""").
-						Replace("{userid}",								@"""" + _mySettings.userid								+ @"""").
-						Replace("{c_day_Day}",							@"""" + _mySettings.c_day_Day							+ @"""").
-						Replace("{c_night_Day}",						@"""" + _mySettings.c_night_Day							+ @"""").
-						Replace("{c_day_MainBackground}",				@"""" + _mySettings.c_day_MainBackground				+ @"""").
-						Replace("{c_night_MainBackground}",				@"""" + _mySettings.c_night_MainBackground				+ @"""").
-						Replace("{c_day_SelectedDay}",					@"""" + _mySettings.c_day_SelectedDay					+ @"""").
-						Replace("{c_night_SelectedDay}",				@"""" + _mySettings.c_night_SelectedDay					+ @"""").
-						Replace("{c_day_Sunday}",						@"""" + _mySettings.c_day_Sunday						+ @"""").
-						Replace("{c_night_Sunday}",						@"""" + _mySettings.c_night_Sunday						+ @"""").
-						Replace("{c_day_TextboxBackground}",			@"""" + _mySettings.c_day_TextboxBackground				+ @"""").
-						Replace("{c_night_TextboxBackground}",			@"""" + _mySettings.c_night_TextboxBackground			+ @"""").
-						Replace("{c_day_Text}",							@"""" + _mySettings.c_day_Text							+ @"""").
-						Replace("{c_night_Text}",						@"""" + _mySettings.c_night_Text						+ @"""").
-						Replace("{c_day_TextSelection}",				@"""" + _mySettings.c_day_TextSelection					+ @"""").
-						Replace("{c_night_TextSelection}",				@"""" + _mySettings.c_night_TextSelection				+ @"""").
-						Replace("{c_day_DayText}",						@"""" + _mySettings.c_day_DayText						+ @"""").
-						Replace("{c_night_DayText}",					@"""" + _mySettings.c_night_DayText						+ @"""").
-						Replace("{b_AskBeforeChange}",					@"""" + _mySettings.b_AskBeforeChange					+ @"""").
-						Replace("{b_NightMode}",						@"""" + _mySettings.b_NightMode							+ @"""").
-						Replace("{b_PanelClosed}",						@"""" + _mySettings.b_PanelClosed						+ @"""").
-						Replace("{b_SingleUserMode}",					@"""" + _mySettings.b_SingleUserMode					+ @"""").
-						Replace("{b_SpellCheck}",						@"""" + _mySettings.b_SpellCheck						+ @"""").
-						Replace("{b_TextBox_WordWrap}",					@"""" + _mySettings.b_TextBox_WordWrap					+ @"""").
-						Replace("{b_TextBox_LightCursor}",				@"""" + _mySettings.b_TextBox_LightCursor				+ @"""").
-						Replace("{b_TextBox_LightCursor_NightOnly}",	@"""" + _mySettings.b_TextBox_LightCursor_NightOnly		+ @"""").
-						Replace("{TextBox_Align}",						@"""" + _mySettings.TextBox_Align						+ @"""").
-						Replace("{TextBox_Language}",					@"""" + _mySettings.TextBox_Language					+ @"""").
-						Replace("{SingleUser_UserName}",				@"""" + _mySettings.SingleUser_UserName					+ @"""");
+			json = json.Replace("{username}",							_mySettings.username									+ @""	).
+						Replace("{userid}",								_mySettings.userid										+ @""	).
+						Replace("{c_day_Day}",							_mySettings.c_day_Day.toJC().ARGB						+ @""	).
+						Replace("{c_night_Day}",						_mySettings.c_night_Day.toJC().ARGB						+ @""	).
+						Replace("{c_day_MainBackground}",				_mySettings.c_day_MainBackground.toJC().ARGB			+ @""	).
+						Replace("{c_night_MainBackground}",				_mySettings.c_night_MainBackground.toJC().ARGB			+ @""	).
+						Replace("{c_day_SelectedDay}",					_mySettings.c_day_SelectedDay.toJC().ARGB				+ @""	).
+						Replace("{c_night_SelectedDay}",				_mySettings.c_night_SelectedDay.toJC().ARGB				+ @""	).
+						Replace("{c_day_Sunday}",						_mySettings.c_day_Sunday.toJC().ARGB					+ @""	).
+						Replace("{c_night_Sunday}",						_mySettings.c_night_Sunday.toJC().ARGB					+ @""	).
+						Replace("{c_day_TextboxBackground}",			_mySettings.c_day_TextboxBackground.toJC().ARGB			+ @""	).
+						Replace("{c_night_TextboxBackground}",			_mySettings.c_night_TextboxBackground.toJC().ARGB		+ @""	).
+						Replace("{c_day_Text}",							_mySettings.c_day_Text.toJC().ARGB						+ @""	).
+						Replace("{c_night_Text}",						_mySettings.c_night_Text.toJC().ARGB					+ @""	).
+						Replace("{c_day_TextSelection}",				_mySettings.c_day_TextSelection.toJC().ARGB				+ @""	).
+						Replace("{c_night_TextSelection}",				_mySettings.c_night_TextSelection.toJC().ARGB			+ @""	).
+						Replace("{c_day_DayText}",						_mySettings.c_day_DayText.toJC().ARGB					+ @""	).
+						Replace("{c_night_DayText}",					_mySettings.c_night_DayText.toJC().ARGB					+ @""	).
+						Replace("{b_AskBeforeChange}",					_mySettings.b_AskBeforeChange							+ @""	).
+						Replace("{b_NightMode}",						_mySettings.b_NightMode									+ @""	).
+						Replace("{b_PanelClosed}",						_mySettings.b_PanelClosed								+ @""	).
+						Replace("{b_SingleUserMode}",					_mySettings.b_SingleUserMode							+ @""	).
+						Replace("{b_SpellCheck}",						_mySettings.b_SpellCheck								+ @""	).
+						Replace("{b_TextBox_WordWrap}",					_mySettings.b_TextBox_WordWrap							+ @""	).
+						Replace("{b_TextBox_LightCursor}",				_mySettings.b_TextBox_LightCursor						+ @""	).
+						Replace("{b_TextBox_LightCursor_NightOnly}",	_mySettings.b_TextBox_LightCursor_NightOnly				+ @""	).
+						Replace("{TextBox_Align}",						_mySettings.TextBox_Align								+ @""	).
+						Replace("{TextBox_Language}",					_mySettings.TextBox_Language							+ @""	).
+						Replace("{SingleUser_UserName}",				_mySettings.SingleUser_UserName							+ @""	);
 
 			return json;
 		}
+
+	}
+
+	/// <summary>
+	/// Class to turn ARGB values into Color
+	/// </summary>
+	public class JsonColor
+	{
+		private byte A { get; set; }
+		private byte R { get; set; }
+		private byte G { get; set; }
+		private byte B { get; set; }
+
+		private System.Drawing.Color _color = System.Drawing.Color.White;
+		public System.Drawing.Color Color { get { return _color; } }
+		private string _argb = "{ A:255, R:255, G:255, B:255 }";
+		public string ARGB { get { return _argb; } }
+
+		public JsonColor(byte a, byte r, byte g, byte b)
+		{
+			A = a;
+			R = r;
+			G = g;
+			B = b;
+			
+			setColor();
+			setARGB();
+		}
+
+		private void setColor()
+		{
+			_color = System.Drawing.Color.FromArgb(A, R, G, B);
+		}
+		private void setARGB()
+		{
+			_argb = $"{{ A:{A}, R:{R}, G:{G}, B:{B} }}";
+		}
+
+
 	}
 
 	/// <summary>
